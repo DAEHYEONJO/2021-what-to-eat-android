@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.RecipeFragment">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.daerong.uxdesign.viewmodel.MyViewModel" />
+    </data>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="#키워드를 돌려보세요"
+            android:fontFamily="@font/cookie_run_black"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:layout_marginTop="90dp"
+            android:textSize="30sp"/>
+        <com.magicgoop.tagsphere.TagSphereView
+            android:id="@+id/tag_sphere_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:onTagTapListener = "@{viewModel.tagTapListener}"
+            app:radius="2.5"/>
+
+
+
+    </RelativeLayout>
+</layout>

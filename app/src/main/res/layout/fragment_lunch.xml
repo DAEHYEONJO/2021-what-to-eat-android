@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.daerong.uxdesign.viewmodel.MyViewModel" />
+    </data>
+    <com.baoyz.widget.PullRefreshLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:animateLayoutChanges="true"
+        tools:context=".fragments.LunchFragment"
+        android:id="@+id/swipe_layout"
+        app:refreshType="material"
+        app:refreshing = "@{viewModel.isLoading}"
+        app:onRefreshListener="@{()->viewModel.setPlaceWithImage(viewModel.curX, viewModel.curY)}"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="60sp"
+                    android:gravity="center"
+                    android:fontFamily="@font/cookie_run_regular"
+                    android:textColor="@color/black"
+                    android:text="오늘\n뭐먹지?"/>
+                <ImageView
+                    android:id="@+id/place_img"
+                    android:layout_width="300dp"
+                    android:layout_height="300dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/background_circle"
+                    android:padding="10dp"
+                    placeImage="@{viewModel.placeUrl}"/>
+                <TextView
+                    android:id="@+id/place_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:gravity="center"
+                    android:fontFamily="@font/cookie_run_bold"
+                    android:padding="5dp"
+                    android:text="@{viewModel.placeName}"/>
+                <TextView
+                    android:id="@+id/place_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:gravity="center"
+                    android:fontFamily="@font/cookie_run_bold"
+                    android:padding="5dp"
+                    android:text="@{viewModel.placePhone}"/>
+                <TextView
+                    android:id="@+id/place_addr"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:gravity="center"
+                    android:fontFamily="@font/cookie_run_bold"
+                    android:padding="5dp"
+                    android:text="@{viewModel.placeAddress}"/>
+            </LinearLayout>
+
+
+        </ScrollView>
+    </com.baoyz.widget.PullRefreshLayout>
+</layout>

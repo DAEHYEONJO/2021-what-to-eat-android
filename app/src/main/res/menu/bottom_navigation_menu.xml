@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/today_random_restaurant_btn"
+        android:icon="@drawable/ic_baseline_lunch_dining_24"
+        android:title="Lunch"/>
+    <item
+        android:id="@+id/today_random_recipe_video_btn"
+        android:icon="@drawable/ic_baseline_ondemand_video_24"
+        android:title="Recipe"/>
+    <item
+        android:id="@+id/today_random_food_blog_btn"
+        android:icon="@drawable/ic_baseline_health_and_safety_24"
+        android:title="Health"/>
+
+</menu>
